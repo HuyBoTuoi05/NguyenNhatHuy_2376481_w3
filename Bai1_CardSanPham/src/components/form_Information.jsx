@@ -26,25 +26,30 @@ function FormInformation(){
 
     return(
         <>
-            <form className="form-container">
+            <form className="form-container" onSubmit={subm}>
             <h2 className="form-title">Đăng ký thông tin</h2>
             
             <div className="form-group">
                 <label htmlFor="name">Name: </label>
-                <input type="text" name='name' id='name' placeholder="Nhập tên của bạn..."/>
+                <input type="text" name='name' id='name' 
+                value={info.name} onChange={handleChange} placeholder="Nhập tên của bạn..."/>
             </div>
 
             <div className="form-group">
                 <label htmlFor="email">Email: </label>
-                <input type="email" name='email' id='email' placeholder="example@gmail.com"/>
+                <input type="email" name='email' id='email' 
+                value={info.email} 
+                onChange={handleChange} 
+                placeholder="example@gmail.com"/>
             </div>
 
             <div className="form-group">
                 <label htmlFor="age">Age: </label>
-                <input type="number" name='age' id='age' placeholder="Tuổi"/>
+                <input type="number" name='age' id='age' 
+                value={info.age} onChange={handleChange} placeholder="Tuổi"/>
             </div>
 
-            <button onClick={click} type="button" id="btn" className="submit-btn">Submit</button>
+            <button type="submit" id="btn" className="submit-btn">Submit</button>
         </form>
 
         <div>
